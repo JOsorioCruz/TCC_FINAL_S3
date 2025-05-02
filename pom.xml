@@ -13,6 +13,7 @@
 
     <modules>
         <module>signup</module>
+        <module>login</module>
         <!-- Aquí puedes agregar más módulos: <module>user-service</module>, etc. -->
     </modules>
 
