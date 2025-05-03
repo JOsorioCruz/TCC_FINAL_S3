@@ -14,7 +14,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-@Tag(name = "Autenticación", description = "Inicio de sesión")
+@Tag(name = "Autenticacion", description = "Inicio de sesión")
 public class LoginController {
 
     private final LoginService loginService;

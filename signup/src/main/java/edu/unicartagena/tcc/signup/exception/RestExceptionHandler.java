@@ -36,4 +36,11 @@ public class RestExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(Map.of("mensaje", ex.getMessage()));
     }
+
+    @ExceptionHandler(RegistroException.class)
+    public ResponseEntity<?> handleRegistroException(RegistroException ex) {
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(Map.of("mensaje", ex.getMessage()));
+    }
 }

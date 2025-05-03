@@ -17,11 +17,20 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public void registrarUsuario(SignupRequest request) {
+
         if (usuarioRepository.existsByCorreo(request.getCorreo())) {
-            throw new IllegalArgumentException("El correo ya está registrado.");
+            throw new IllegalArgumentException("El correo electrónico ya está registrado.");
         }
 
-        Usuario usuario = Usuario.builder()
+        if (usuarioRepository.existsByIdentificacion(request.getIdentificacion())) {
+            throw new IllegalArgumentException("La identificación ya está registrada en el sistema.");
+        }
+
+        if (usuarioRepository.existsByTelefono(request.getTelefono())) {
+            throw new IllegalArgumentException("El número de teléfono ya está registrado en el sistema.");
+        }
+
+        Usuario nuevoUsuario = Usuario.builder()
                 .nombreCompleto(request.getNombreCompleto())
                 .correo(request.getCorreo())
                 .telefono(request.getTelefono())
@@ -30,6 +39,6 @@ public class UsuarioServiceImpl implements UsuarioService {
                 .contrasena(passwordEncoder.encode(request.getContrasena()))
                 .build();
 
-        usuarioRepository.save(usuario);
+        usuarioRepository.save(nuevoUsuario);
     }
 }
