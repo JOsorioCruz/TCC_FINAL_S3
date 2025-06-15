@@ -12,10 +12,11 @@
     <description>Proyecto TCC - Universidad de Cartagena</description>
 
     <modules>
-        <module>signup</module>
         <module>login</module>
-        <!-- Aquí puedes agregar más módulos: <module>user-service</module>, etc. -->
+        <module>signup</module>
+        <module>product</module> <!-- nuevo -->
     </modules>
+
 
     <properties>
         <java.version>21</java.version>

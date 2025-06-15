@@ -95,7 +95,7 @@ signup/
 - Repositorio `UsuarioRepository`
 - Servicio `UsuarioService` + implementación
 - Controlador `SignupController`
-- Seguridad con `SecurityConfig`
+- Seguridad con `edu.unicartagena.tcc.product.security.SecurityConfig`
 - Validación con `@Valid`
 - Cifrado de contraseña con `BCryptPasswordEncoder`
 

@@ -19,5 +19,4 @@ public class SignupController {
         usuarioService.registrarUsuario(request);
         return ResponseEntity.ok("Usuario registrado correctamente.");
     }
-
 }

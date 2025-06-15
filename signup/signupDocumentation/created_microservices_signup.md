@@ -168,12 +168,12 @@ public class SignupController {
 
 ---
 
-## 🔐 Paso 6: Configurar seguridad - `SecurityConfig.java`
+## 🔐 Paso 6: Configurar seguridad - `edu.unicartagena.tcc.product.security.SecurityConfig.java`
 
 ```java
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class edu.unicartagena.tcc.product.security.SecurityConfig {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

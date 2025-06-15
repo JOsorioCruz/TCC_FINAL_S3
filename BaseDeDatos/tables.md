@@ -11,8 +11,6 @@ rol VARCHAR(20) CHECK (rol IN ('comprador', 'vendedor', 'admin')) DEFAULT 'compr
 fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
 CREATE TABLE productos (
 id_producto SERIAL PRIMARY KEY,
 nombre VARCHAR(100) NOT NULL,
@@ -32,14 +30,12 @@ id_producto INT REFERENCES productos(id_producto) ON DELETE CASCADE,
 CONSTRAINT unicos_favoritos UNIQUE(id_usuario, id_producto)
 );
 
-
 CREATE TABLE carrito (
 id_carrito SERIAL PRIMARY KEY,
 id_usuario INT REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
 estado VARCHAR(20) CHECK (estado IN ('pendiente', 'pagado')) DEFAULT 'pendiente',
 fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 
 CREATE TABLE ventas (
 id_venta SERIAL PRIMARY KEY,
@@ -59,7 +55,6 @@ cantidad INT NOT NULL,
 precio_unitario DECIMAL(10,2) NOT NULL
 );
 
-
 CREATE TABLE comentarios (
 id_comentario SERIAL PRIMARY KEY,
 id_usuario INT REFERENCES usuarios(id_usuario),
@@ -69,7 +64,6 @@ calificacion INT CHECK (calificacion BETWEEN 1 AND 5),
 fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
 CREATE TABLE respuestas_comentario (
 id_respuesta SERIAL PRIMARY KEY,
 id_comentario INT REFERENCES comentarios(id_comentario) ON DELETE CASCADE,
@@ -77,7 +71,6 @@ id_vendedor INT REFERENCES usuarios(id_usuario),
 respuesta TEXT,
 fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 
 CREATE TABLE inventario_ajustes (
 id_ajuste SERIAL PRIMARY KEY,

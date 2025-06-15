@@ -55,7 +55,7 @@ Controller → Service → Repository → Entity
 
 ### 6. Configuration
 
-**`SecurityConfig.java`**
+**`edu.unicartagena.tcc.product.security.SecurityConfig.java`**
 - **Propósito**: Configura la seguridad de la aplicación
 - **Funciones**:
     - Define rutas públicas y protegidas
