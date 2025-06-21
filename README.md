@@ -87,6 +87,7 @@ Para probar los endpoints:
 ## 👥 Autores
 
 * Jairo Osorio Cruz – QA Engineer | Backend Developer en formación
+* En colaboracion con Laura Avila y  Jesus Lopez
 
 ## 📜 Licencia
 
