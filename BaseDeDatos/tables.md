@@ -23,7 +23,7 @@ A continuación se describen las tablas que conforman la base de datos del siste
 
 ---
 
-## Sentencias SQL
+## Sentencias SQL Tabla: `usuarios`
 ```sql
 CREATE TABLE usuarios (
   id_usuario SERIAL PRIMARY KEY,
@@ -54,7 +54,7 @@ CREATE TABLE usuarios (
 | `id_vendedor`          | INT           | FOREIGN KEY → `usuarios(id_usuario)` ON DELETE CASCADE |
 
 ---
-## Sentencias SQL
+## Sentencias SQL Tabla: `productos`
 ```sql
 CREATE TABLE productos (
   id_producto SERIAL PRIMARY KEY,
@@ -80,7 +80,7 @@ CREATE TABLE productos (
 
 ---
 
-## Sentencias SQL
+## Sentencias SQL Tabla: `carrito`
 ```sql
 CREATE TABLE carrito (
   id_carrito SERIAL PRIMARY KEY,
@@ -102,7 +102,7 @@ CREATE TABLE carrito (
 | `fecha_venta`       | TIMESTAMP     | DEFAULT CURRENT\_TIMESTAMP                        |
 
 ---
-## Sentencias SQL
+## Sentencias SQL Tabla: `ventas`
 ```sql
 CREATE TABLE ventas (
   id_venta SERIAL PRIMARY KEY,
