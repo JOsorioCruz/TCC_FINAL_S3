@@ -18,7 +18,6 @@ A continuación se describen las tablas que conforman la base de datos del siste
 | `tipo_identificacion` | VARCHAR(5)   | CHECK (IN 'CC', 'NIT')                                              |
 | `identificacion`      | VARCHAR(20)  | UNIQUE, NOT NULL                                                    |
 | `contrasena`          | VARCHAR(255) | NOT NULL                                                            |
-| `rol`                 | VARCHAR(20)  | CHECK (IN 'comprador', 'vendedor', 'admin') - DEFAULT `'comprador'` |
 | `fecha_registro`      | TIMESTAMP    | DEFAULT CURRENT\_TIMESTAMP                                          |
 
 ---
