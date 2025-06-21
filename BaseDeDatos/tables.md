@@ -23,7 +23,8 @@ A continuación se describen las tablas que conforman la base de datos del siste
 
 ---
 
-
+## Sentencias SQL
+```sql
 CREATE TABLE usuarios (
   id_usuario SERIAL PRIMARY KEY,
   nombre_completo VARCHAR(100) NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE usuarios (
   rol VARCHAR(20) CHECK (rol IN ('comprador', 'vendedor', 'admin')) DEFAULT 'comprador',
   fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 
 ## 🍾 Tabla: `productos`
 
@@ -53,6 +54,8 @@ CREATE TABLE usuarios (
 | `id_vendedor`          | INT           | FOREIGN KEY → `usuarios(id_usuario)` ON DELETE CASCADE |
 
 ---
+## Sentencias SQL
+```sql
 CREATE TABLE productos (
   id_producto SERIAL PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
@@ -64,7 +67,7 @@ CREATE TABLE productos (
   porcentaje_descuento DECIMAL(5,2),
   id_vendedor INT REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
-
+```
 
 ## 🛒 Tabla: `carrito`
 
@@ -76,13 +79,16 @@ CREATE TABLE productos (
 | `fecha_creacion` | TIMESTAMP   | DEFAULT CURRENT\_TIMESTAMP                               |
 
 ---
+
+## Sentencias SQL
+```sql
 CREATE TABLE carrito (
   id_carrito SERIAL PRIMARY KEY,
   id_usuario INT REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
   estado VARCHAR(20) CHECK (estado IN ('pendiente', 'pagado')) DEFAULT 'pendiente',
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 ## 💰 Tabla: `ventas`
 
 | Campo               | Tipo          | Restricciones                                     |
@@ -96,6 +102,8 @@ CREATE TABLE carrito (
 | `fecha_venta`       | TIMESTAMP     | DEFAULT CURRENT\_TIMESTAMP                        |
 
 ---
+## Sentencias SQL
+```sql
 CREATE TABLE ventas (
   id_venta SERIAL PRIMARY KEY,
   id_usuario INT REFERENCES usuarios(id_usuario),
@@ -105,4 +113,4 @@ CREATE TABLE ventas (
   estado_entrega VARCHAR(30) CHECK (estado_entrega IN ('preparando', 'en camino', 'entregado')),
   fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
